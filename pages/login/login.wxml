@@ -1,0 +1,62 @@
+<!--pages/login/login.wxml-->
+<!--填写个人信息 -->
+<template name="login">
+    <view class="loginCell">
+      <text class="login-tips">欢迎来到 <text class='tbh-font'>tbh</text></text>
+      <view class='input-tips'>
+        <text class='inputs-tips-text input-name'>姓名</text>
+        <text class='inputs-tips-text input-sex'>性别</text>
+        <input class='inputName input-name' type='text' value="{{loginInfo.name}}" bindinput="bindKeyInputName"></input>
+        <picker class='inputName pickerSex input-sex' bindchange="bindPickerChangeSex" value="{{sex}}" range="{{sexArray}}">
+          <view class="picker">
+            {{sexArray[sex]}}
+          </view>
+           <image class="picker-icon-pull" mode='aspectFill' src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_pull.png" background-size="cover"></image>
+        </picker>
+      </view>
+      <view class='input-tips'>
+        <text class='inputs-tips-text input-area'>省</text>
+        <text class='inputs-tips-text input-area'>市</text>
+        <text class='inputs-tips-text input-area input-area-noMargin'>县/区</text>
+        <picker class='inputName pickerSex input-area' bindchange="bindPickerChangeProvince" value="{{province}}" range="{{provinceArray}}">
+          <view class="picker">
+            {{loginInfo.province}}
+          </view>
+          <image class="picker-icon-pull" mode='aspectFill' src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_pull.png" background-size="cover"></image>
+        </picker>
+        <picker class='inputName pickerSex input-area' bindchange="bindPickerChangeCity" value="{{city}}" range="{{cityArray}}">
+          <view class="picker">
+            {{loginInfo.city}}
+          </view>
+          <image class="picker-icon-pull" mode='aspectFill' src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_pull.png" background-size="cover"></image>
+        </picker>
+        <picker class='inputName pickerSex input-area input-area-noMargin' bindchange="bindPickerChangeArea" value="{{area}}" range="{{areaArray}}">
+          <view class="picker">
+            {{loginInfo.area}}
+          </view>
+          <image class="picker-icon-pull" mode='aspectFill' src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_pull.png" background-size="cover"></image>
+        </picker>
+      </view>
+      <view class='input-tips'>
+        <text class='inputs-tips-text input-school'>学校</text>
+        <input class='inputName input-school' type='text' value="{{loginInfo.school}}" bindinput="bindKeyInputSchool"></input>
+      </view>
+      <view class='input-tips'>
+        <text class='inputs-tips-text input-name'>年级</text>
+        <text class='inputs-tips-text input-sex'>班级</text>
+        <picker class='inputName pickerSex input-name' bindchange="bindPickerChangeGrade" value="{{grade}}" range="{{gradeArray}}">
+          <view class="picker">
+            {{loginInfo.grade}}年级
+          </view>
+          <image class="picker-icon-pull" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_pull.png" background-size="cover"></image>
+        </picker>
+        <picker class='inputName pickerSex input-sex' bindchange="bindPickerChangeClass" value="{{class}}" range="{{classArray}}">
+          <view class="picker">
+            {{loginInfo.class}}班
+          </view>
+          <image class="picker-icon-pull" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_pull.png" background-size="cover"></image>
+        </picker>
+      </view>
+      <button bindtap="login" class='logins'> 完成！ </button>
+    </view>
+</template>

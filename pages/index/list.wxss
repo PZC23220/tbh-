@@ -1,0 +1,108 @@
+/* pages/login/index_2.wxss */
+.list {
+  height: 100vh;
+  width: 100%;
+  background: #A341D3;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.userinfo {
+  padding-top: 9.72222vw;
+  position: relative;
+  overflow: hidden;
+  margin: 0 5.55555vw 8px;
+}
+.userinfo-avatar {
+  width: 19.44444vw;
+  height: 19.44444vw;
+  border-radius: 50%;
+  position: absolute;left: 50%;top: 0;
+  margin-left: -9.72222vw;
+}
+.userInfo_content {
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 11.38888vw;
+  padding-bottom: 11px;
+}
+.userInfo_content .userinfo-info {
+  font-size: 14px;
+  color: #666;
+  display: inline-block;
+  line-height: 14px;
+  padding-right: 11px;
+  margin-right: 9px;
+}
+.userInfo_content .userinfo-school {
+  border-right: 1px #666 solid;
+  
+}
+.userInfo_content .userinfo-nickname {
+  font-size: 20px;
+  color: #333333;
+  font-weight: 600;
+   padding-bottom: 7px; 
+  display: block;
+}
+.tbh-friends-tips {
+  opacity: 0.5;
+  font-size: 16px;
+  color: #FFFFFF;
+  padding-left: 10px;
+  display: block;
+  margin: 10px 5.55555vw 5px;
+}
+.tbh-friends-list {
+  position: relative;
+  padding: 0 5.55555vw 12px;
+}
+.tbh-friend-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px 2.77777vw 7px;
+}
+.tbh-diamond {
+  width: 50px;
+  height: 50px;
+  position: absolute;right: 0;
+  top: 50%;margin-top: -25px;
+}
+.friends-avatar {
+  width: 19.44444vw;
+  height: 19.44444vw;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 2.77777vw;
+}
+.tbh-friends-info {
+  display: inline-block;
+  max-width: 55.55555vw;
+  vertical-align: middle;
+}
+.friends-name {
+  font-size: 20px;
+  color: #222222;
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+.friends-name-received {
+  font-size: 14px;
+  color: #666666;
+  margin-left: 6px;
+}
+.friends-received {
+  font-size: 14px;
+  color: #222222;
+  font-weight: 600;
+}
+.friends-from {
+  font-size: 14px;
+  color: #666666;
+}
+.list-content {
+  max-height: calc(100vh - 70px);
+  overflow: auto;
+}

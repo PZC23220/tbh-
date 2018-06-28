@@ -1,0 +1,12 @@
+<!--message.wxml-->
+<template name="message">
+<view class="userinfo message">
+  <image class="userinfo-avatar" src="{{item.avatar}}" background-size="cover"></image>
+  <view class='userInfo_content'>
+    <text class="userinfo-info userinfo-nickname">{{item.name}}</text>
+    <text class="userinfo-info userinfo-sex">{{item.sex}}</text>
+    <text class="userinfo-info">{{item.school}}</text>
+    <text class="userinfo-info">{{item.grade}}{{item.class}}</text>
+  </view>
+</view>
+</template>

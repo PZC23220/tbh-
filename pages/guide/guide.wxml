@@ -1,0 +1,18 @@
+<!--pages/guide/guide.wxml-->
+<view class='guide'>
+  <view class='welcome-tbh'>
+    <text class='welcome'>欢迎来到</text>
+    <text class='tbh'>tbh</text>
+  </view>
+  <view class='guide-pic'>
+    <image class="guide-pic-image-1" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/pic_1.png" background-size="cover"></image>
+    <image class="guide-pic-image-2" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/pic_2_cn.jpg" background-size="cover"></image>
+     <text class='guide-pic-text guide-pic-text-1'>谁最符合？
+     捅TA出去！</text>
+     <text class='guide-pic-text guide-pic-text-2'>谁也不知道
+     是你捅的哦！</text> 
+  </view>
+  <view class='play' bindtap='bindPlay'>
+    开始答题 !
+  </view>
+</view>

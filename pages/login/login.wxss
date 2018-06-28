@@ -1,0 +1,103 @@
+/* pages/login/login.wxss */
+.tbh-font {
+  font-family: 'FiraSansCondensed-HeavyItalic'; 
+  font-size: 44px;
+  letter-spacing: 3.6px;
+}
+.loginCell {
+  background: #009fff;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding: 5vh 8.33333vw 0 5vw;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  box-sizing: border-box;
+}
+.login-tips {
+  font-weight: 600;
+  font-size: 23px;
+  color: #fff;
+  margin-bottom: 5vh;
+  text-align: center;
+  display: block;
+}
+.input-tips {
+  overflow: hidden;
+  margin-bottom: 2.65625vh;
+}
+.inputs-tips-text {
+  color: #fff;
+  font-family: 'FiraSansCondensed-HeavyItalic'; 
+  font-size: 16px;
+  float: left;
+  line-height: 30px;
+}
+.inputName {
+  background: #fff;
+  border-radius: 8px;
+  padding: 0 9px;
+  line-height: 44px;
+  height: 44px;
+  font-size: 16px;
+  float: left;
+  box-sizing: border-box;
+  color: #222;
+}
+.pickerSex {
+  text-align: left;
+  position: relative;
+}
+.picker-icon-pull {
+  position: absolute;right: 6.8px;top: 16.2px;
+    width: 14.2px;
+    height: 9.8px; 
+    z-index: 10000; 
+}
+.input-name {
+  width: 50vw;
+  margin-right: 2.77777vw;
+}
+.input-sex {
+  width: 33.33333vw;
+}
+.picker-inputs-tips-text {
+  float: none;
+  width: 100%;
+}
+.input-area {
+  /* width: 27.77777vw;
+  margin-right: 1.38888vw; */
+  width: 100%;
+}
+.input-area-noMargin {
+  margin-right: 0;
+}
+.input-school {
+  width: 100%;
+}
+.logins {
+  width: 50vw;
+  margin-bottom: 30px;
+  height: 55px;
+  line-height: 51px;
+  background: none;
+  font-size: 24px;
+  color: #FFFFFF;
+  margin-top: 5.5vh;
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 600;
+  padding-left: 8.33333vw;
+}
+@media screen and (max-height: 570px) {
+    .inputName {
+      height: 35px;
+      line-height: 35px;
+    }
+    .logins {
+      height: 45px;
+      line-height: 41px;
+    }
+}

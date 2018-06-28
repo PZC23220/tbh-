@@ -1,0 +1,54 @@
+/**index.wxss**/
+@import "../login/login.wxss";
+@import "list.wxss";
+.play {
+  text-align: center;
+  background: #A341D3;
+  width: 100%;
+  left: 0;   
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 9px;
+  padding-top: 9px;
+}
+.play_text {
+  font-family: FiraSansCondensed-HeavyItalic;
+  font-size: 26px;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  width: 77.77777vw;
+  height: 52px;
+  line-height: 48px;
+  display: block;
+  margin: 0 auto;
+  background: #FFAE30;
+  border: 2px solid #FFFFFF;
+  border-radius: 11px;
+  box-sizing: border-box;
+}
+.vertical-align {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 3px;
+}
+.nav-image {
+  width: 17px;
+  height: 16px;
+}
+.nav-image-2 {
+  width: 28px;
+  height: 16px;
+}
+.page-links {
+  color: #fff;
+  overflow: hidden;
+  margin: 12px 5.55555vw 0;
+  line-height: 16px;
+}
+.add-friends-text {
+  float: left;
+}
+.my-diamond-text {
+  float: right;
+}

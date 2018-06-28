@@ -1,0 +1,45 @@
+/* pages/diamonds/diamonds.wxss */
+.diamonds {
+  background: #A341D3;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  padding: 16px 5.55555vw 0;
+  box-sizing: border-box;
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  text-align: center;
+}
+.wow {
+  display: block;
+  font-family: FiraSansCondensed-HeavyItalic;
+  font-size: 21.6px;
+  color: #FFFFFF;
+  letter-spacing: 1.01px;
+  margin-bottom: 24px;
+}
+.diamonds-images {
+  overflow: hidden;
+  margin-bottom: 26px;
+}
+.diamonds-content {
+  width: 41.66666vw;
+  float: right;
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px 0 10px;
+  font-size: 20px;
+  color: #E8009E;
+  font-weight: 600;
+}
+.diamonds-content:first-child {
+  float: left;
+  color: #00B7D8;
+}
+.diamonds-pic {
+  width: 86px;
+  height: 79px;
+  display: block;
+  margin: 0 auto 16px;
+}
+

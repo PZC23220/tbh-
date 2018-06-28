@@ -1,0 +1,15 @@
+<!--pages/diamonds/diamonds.wxml-->
+<view class='diamonds'>
+  <text class='wow'>哇哦 ! 我竟然收获了那么多💎 ! ! !</text>
+  <view class='diamonds-images'>
+    <view class='diamonds-content'>
+      <image class="diamonds-pic vertical-align" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_diamond_3.png" background-size="cover"></image>
+      <text>{{blueDiamonds}}</text>
+    </view>
+    <view class='diamonds-content'>
+      <image class="diamonds-pic vertical-align" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_diamond_4.png" background-size="cover"></image>
+      <text>{{redDiamonds}}</text>
+    </view>
+  </view>
+  <button class='share' open-type='share' bindtap='onShareAppMessage'>分享 !</button>
+</view>

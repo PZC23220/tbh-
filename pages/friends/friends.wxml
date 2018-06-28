@@ -1,0 +1,50 @@
+<!--pages/friends/friends.wxml-->
+<scroll-view scroll-y enable-back-to-top class='add-friends'>
+  <input type='text' placeholder='搜索朋友' class='search-friends' placeholder-class='search-friends-placeholder' bindinput='bindSearch'></input>
+  <view class='no-friend' wx:if='{{hasFriend == false}}'>
+    <text>快去添加朋友
+    看看他们获得了什么</text>
+  </view>
+  <view class='friends-list' wx:else>
+    <text class='friends-tips'>我的朋友</text>
+    <!-- 已关注列表 -->
+    <view class='list-content' wx:for="{{friendsList}}" wx:if="{{displayNone}}" wx:for-item="item">
+      <view class='friends-list-content'>
+        <image class="friend-avatar vertical-align" src="{{item.avatar?item.avatar:'http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/pic_girl.png'}}" background-size="cover" wx:if="{{item.gender == 'F'}}"></image>
+        <image class="friend-avatar vertical-align" src="{{item.avatar?item.avatar:'http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/pic_boy.png'}}" background-size="cover" wx:else></image>
+        <view class='friend-info vertical-align'>
+          <text class='friend-info-text friend-info-name'>{{item.name}}</text>
+          <text class='friend-info-text friend-info-school'>{{item.school}}</text>
+          <text class='friend-info-text friend-info-class'>{{item.grade}}年级，{{item.clazz}}班</text>
+        </view>
+      </view>
+    </view>
+    <!-- 搜索已关注 -->
+    <view class='list-content' wx:for="{{following}}" wx:for-item="item">
+      <view class='friends-list-content'>
+        <image class="friend-avatar vertical-align" src="{{item.avatar?item.avatar:'http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/pic_girl.png'}}" background-size="cover" wx:if="{{item.gender == 'F'}}"></image>
+        <image class="friend-avatar vertical-align" src="{{item.avatar?item.avatar:'http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/pic_boy.png'}}" background-size="cover" wx:else></image>
+        <view class='friend-info vertical-align'>
+          <text class='friend-info-text friend-info-name'>{{item.name}}</text>
+          <text class='friend-info-text friend-info-school'>{{item.school}}</text>
+          <text class='friend-info-text friend-info-class'>{{item.grade}}年级，{{item.clazz}}班</text>
+        </view>
+        <image bindtap='bindFollow' data-follow='unfollow' data-ids="{{item.id}}" class="add-friends-icon" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_added copy.png" background-size="cover"></image>
+      </view>
+    </view>
+    
+    <!-- 搜索未关注 -->
+    <view class='list-content' wx:for="{{others}}" wx:for-item="item">
+      <view class='friends-list-content'>
+        <image class="friend-avatar vertical-align" src="{{item.avatar?item.avatar:'http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/pic_girl.png'}}" background-size="cover" wx:if="{{item.gender == 'F'}}"></image>
+        <image class="friend-avatar vertical-align" src="{{item.avatar?item.avatar:'http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/pic_boy.png'}}" background-size="cover" wx:else></image>
+        <view class='friend-info vertical-align'>
+          <text class='friend-info-text friend-info-name'>{{item.name}}</text>
+          <text class='friend-info-text friend-info-school'>{{item.school}}</text>
+          <text class='friend-info-text friend-info-class'>{{item.grade}}年级，{{item.clazz}}班</text>
+        </view>
+        <image bindtap='bindFollow' data-follow='follow' data-ids="{{item.id}}" class="add-friends-icon" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_add copy.png" background-size="cover"></image>
+      </view>
+    </view>
+  </view>
+</scroll-view>

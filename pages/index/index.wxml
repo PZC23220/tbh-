@@ -1,0 +1,107 @@
+<!--index.wxml-->
+<import src="message.wxml" />
+<view class="container">
+    <!--登录  -->
+    <view class="loginCell" wx:if="{{isLogin}}">
+      <text class="login-tips">欢迎来到 <text class='tbh-font'>默赞</text></text>
+      <view class='input-tips'>
+        <text class='inputs-tips-text input-name'>姓名</text>
+        <text class='inputs-tips-text input-sex'>性别</text>
+        <input class='inputName input-name' type='text' value="{{loginInfo.name}}" bindinput="bindKeyInputName"></input>
+        <picker class='inputName pickerSex input-sex' bindchange="bindPickerChangeSex" value="{{gender}}" range="{{genderArray}}">
+          <view class="picker">
+            {{genderArray[gender]}}
+          </view>
+           <image class="picker-icon-pull" mode='aspectFill' src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_pull.png" background-size="cover"></image>
+        </picker>
+      </view>
+      <view class='input-tips'>
+        <text class='inputs-tips-text input-area'>地区</text>
+        <!-- <text class='inputs-tips-text input-area'>市</text>
+        <text class='inputs-tips-text input-area input-area-noMargin'>县/区</text> -->
+        <picker class='inputName pickerSex input-area' mode="region" value='{{areaArr}}' bindchange="bindPickerChangeProvince">
+          <view class="picker">
+            {{loginInfo.province}}    {{loginInfo.city}}    {{loginInfo.county}}
+          </view>
+          <image class="picker-icon-pull" mode='aspectFill' src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_pull.png" background-size="cover"></image>
+        </picker>
+        <!-- <picker class='inputName pickerSex input-area' bindchange="bindPickerChangeCity" value="{{city}}" range="{{cityArray}}">
+          <view class="picker">
+            {{loginInfo.city}}
+          </view>
+          <image class="picker-icon-pull" mode='aspectFill' src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_pull.png" background-size="cover"></image>
+        </picker>
+        <picker class='inputName pickerSex input-area input-area-noMargin' bindchange="bindPickerChangeArea" value="{{area}}" range="{{areaArray}}">
+          <view class="picker">
+            {{loginInfo.area}}
+          </view>
+          <image class="picker-icon-pull" mode='aspectFill' src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_pull.png" background-size="cover"></image>
+        </picker> -->
+      </view>
+      <view class='input-tips'>
+        <text class='inputs-tips-text input-school'>学校</text>
+        <input class='inputName input-school' type='text' value="{{loginInfo.school}}" bindinput="bindKeyInputSchool"></input>
+      </view>
+      <view class='input-tips'>
+        <text class='inputs-tips-text input-name'>年级</text>
+        <text class='inputs-tips-text input-sex'>班级</text>
+        <picker class='inputName pickerSex input-name' bindchange="bindPickerChangeGrade" value="{{grade}}" range="{{gradeArray}}">
+          <view class="picker">
+            {{gradeArray[grade]}}
+          </view>
+          <image class="picker-icon-pull" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_pull.png" background-size="cover"></image>
+        </picker>
+        <picker class='inputName pickerSex input-sex' bindchange="bindPickerChangeClass" value="{{clazz}}" range="{{clazzArray}}">
+          <view class="picker">
+            {{loginInfo.clazz}}班
+          </view>
+          <image class="picker-icon-pull" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_pull.png" background-size="cover"></image>
+        </picker>
+      </view>
+      <button bindtap="login" class='logins'> 完成！ </button>
+    </view>
+    <!--主页  -->
+    <view class='list' wx:else>
+      <scroll-view scroll-y enable-back-to-top class='list-content'>
+        <!-- 页面跳转 -->
+        <view class='page-links'>
+          <navigator url="../friends/friends?snsId={{snsId}}&userId={{userId}}" class='add-friends-text'><image class="nav-image vertical-align" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_addfriends.png" background-size="cover"></image><text class='vertical-align'>好友</text></navigator>
+          <navigator url="../diamonds/diamonds?snsId={{snsId}}&userId={{userId}}" class='my-diamond-text'><text class='vertical-align'>{{diamonds}}</text><image class="nav-image-2 vertical-align" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_mydiamonds.png" background-size="cover"></image></navigator>
+        </view>
+        <!-- 个人信息 -->
+        <view class="userinfo">
+          <image bindtap="editInfo" class="userinfo-avatar" src="{{userInfo.avatar? userInfo.avatar:'http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/pic_girl.png'}}" background-size="cover" wx:if="{{userInfo.sex == 'F'}}"></image>
+          <image bindtap="editInfo" class="userinfo-avatar" src="{{userInfo.avatar? userInfo.avatar:'http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/pic_girl.png'}}" background-size="cover" wx:else></image>
+          <view class='userInfo_content'>
+            <text class="userinfo-nickname">{{userInfo.name}}</text>
+            <text class="userinfo-info userinfo-school">{{userInfo.school}}</text>
+            <text class="userinfo-info">{{userInfo.grade}}年级，{{userInfo.clazz}}班</text>
+          </view>
+        </view>
+        <!-- 关注的朋友 -->
+        <view class="tbh-friends">
+          <text class='tbh-friends-tips'>看看朋友们的收获</text>
+          <view class='tbh-friends-list' wx:for="{{friendsMoments}}"  wx:for-item="moments" wx:if="{{moments.question}}">
+            <view class='tbh-friend-content' wx:if="{{moments.friend}}">
+              <image class="friends-avatar" src="{{moments.friend.avatar?moments.friend.avatar:'http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/pic_girl.png'}}" background-size="cover" wx:if="{{moments.friend.gender == 'F'}}"></image>
+              <image class="friends-avatar" src="{{moments.friend.avatar?moments.friend.avatar:'http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/pic_boy.png'}}" background-size="cover" wx:else></image>
+              <view class='tbh-friends-info'>
+                <view class='friends-name'>{{moments.friend.name}} <text class='friends-name-received'>received</text></view>
+                <view class='friends-received'>{{moments.question.content}}</view>
+                <view class='friends-from' wx:if="{{moments.replier}}">From a {{moments.replier.gender == "F" ? 'girl' : 'boy'}} in {{moments.question.dimension}} {{moments.replier[moments.question.dimension]}} </view>
+              </view>
+            </view>
+            <image class="tbh-diamond" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_diamond_1 copy 6.png" background-size="cover" wx:if="{{moments.replier?moments.replier.gender=='M':'false'}}"></image>
+            <image class="tbh-diamond" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_diamond_2 copy 7.png" background-size="cover" wx:if="{{moments.replier?moments.replier.gender=='F':'true'}}"></image>
+          </view>
+          <view class='share-content' wx:if="{{friendsMoments.length<=0}}">
+            <view class='share-tips'>好友太少？</view>
+            <button class='share' open-type='share' bindtap='onShareAppMessage'>邀请好友</button>
+          </view>
+        </view>
+      </scroll-view>
+      <view class='play'>
+        <navigator url="../play/play?snsId={{snsId}}&userId={{userId}}" class='play_text'>开始答题 !</navigator>
+      </view>
+    </view> 
+</view>

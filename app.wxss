@@ -1,0 +1,43 @@
+/**app.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  line-height: 1.5;
+  -webkit-overflow-scrolling: touch;
+}
+.share-tips {
+  text-align: center;
+  color: #fff;
+  margin-top: 30px;
+  font-size: 16px;
+  letter-spacing: 0.74px;
+  margin-bottom: 8px;
+}
+.share {
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  box-sizing: border-box;
+  height: 55px;
+  line-height: 51px;
+  width: 77.77777vw;
+  background: none;
+  font-family: FiraSansCondensed-HeavyItalic;
+  font-size: 26px;
+  color: #FFFFFF;
+  letter-spacing: 1.2px;
+}
+@font-face {
+    font-family: 'FiraSansCondensed-HeavyItalic'; 
+    src: url('http://photodebug.oss-cn-hongkong.aliyuncs.com/font/FiraSansCondensed-HeavyItalic/FiraSansCondensed-HeavyItalic.eot'); /* IE9 Compat Modes */ 
+    src: url('http://photodebug.oss-cn-hongkong.aliyuncs.com/font/FiraSansCondensed-HeavyItalic/FiraSansCondensed-HeavyItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ 
+         url('http://photodebug.oss-cn-hongkong.aliyuncs.com/font/FiraSansCondensed-HeavyItalic/FiraSansCondensed-HeavyItalic.woff') format('woff'), /* Modern Browsers */ 
+         url('http://photodebug.oss-cn-hongkong.aliyuncs.com/font/FiraSansCondensed-HeavyItalic/FiraSansCondensed-HeavyItalic.ttf') format('truetype'), /* Safari, Android, iOS */ 
+         url('http://photodebug.oss-cn-hongkong.aliyuncs.com/font/FiraSansCondensed-HeavyItalic/FiraSansCondensed-HeavyItalic.svg#FiraSansCondensed-HeavyItalic') format('svg'); /* Legacy iOS */
+}
+.vertical-align {
+  display: inline-block;
+  vertical-align: middle;
+}

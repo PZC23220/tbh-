@@ -1,0 +1,93 @@
+/* pages/friends/friends.wxss */
+.add-friends {
+  background: #A341D3;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  padding: 14px 0 0;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255,255,255,0.3);
+}
+.search-friends {
+  background: #FFFFFF;
+  border-radius: 8px;
+  display: block;
+  margin: 0 5.55555vw;
+  line-height: 44px;
+  height: 44px;
+  font-size: 16px;
+  color: #A341D3;
+  padding: 0 17px;
+  box-sizing: border-box;
+}
+.search-friends-placeholder {
+  color: #D1B4E0;
+}
+.no-friend {
+  text-align: center;
+  opacity: 0.5;
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 30px;
+  margin-top: 76px;
+}
+.friends-list {
+  margin-top: 25px;
+}
+.friends-tips {
+  display: block;
+  padding-left: 8.33333vw;
+  opacity: 0.5;
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+.list-content {
+  position: relative;
+  padding: 0 5.55555vw;
+}
+.friends-list-content {
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 14px 10px;
+  margin-bottom: 10px;
+}
+.friend-avatar {
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.friend-info {
+  max-width: calc(88.88888vw - 150px);
+}
+.friend-info-text {
+  display: block;
+}
+.friend-info-name {
+  font-size: 20px;
+  color: #222222;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.friend-info-school {
+  font-size: 14px;
+  color: #222222;
+  font-weight: 600;
+}
+.friend-info-class {
+  font-size: 14px;
+  color: #666666;
+}
+.add-friends-icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+}
+.displayNone {
+  display: none;
+}

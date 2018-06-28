@@ -1,0 +1,39 @@
+<!--pages/play/play.wxml-->
+<!-- 问题内容页 -->
+<view class='play' style='background:{{activeColor}}' wx:if="{{answerComplete == false}}">
+  <view class='questions-nums' style='color:{{activeColor}}'>
+    <text class='current-num'>{{currentTopic}}</text>
+    <text class='total-num'>／{{totalTopic}}</text>
+  </view>
+  <view class='questions-title'>
+    <text>{{question.content}}</text>
+  </view>
+  <view class='answers'>
+    <text class='answers-one {{!answerTap? (currentAnswer == idx ? "active" : "active-else") : ""}}' data-idx="{{idx}}" data-ids="{{item.id}}" wx:for-index="idx" wx:for="{{answerList}}" wx:for-item="item" bindtap="bindAnswer">{{item.name}}</text>
+  </view>
+  <view class='share-content' wx:if="{{answerList.length<=3}}">
+    <view class='share-tips'>好友太少？</view>
+    <button class='share' open-type='share' bindtap='onShareAppMessage'>邀请好友</button>
+  </view>
+  <view class='questions-options'>
+    <view bindtap="bindSwitch" class='options-button'><image class="options-image vertical-align" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_random copy.png" background-size="cover"></image><text class='options-image'>切换</text></view>
+    <view bindtap="bindFilter" class='options-button'><image class="options-image vertical-align" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/icon_next copy.png" background-size="cover"></image><text class='options-image'>跳过</text></view>
+  </view>
+</view>
+<!-- 问题结果 -->
+<view class='play-result' style='background:#A341D3' wx:else>
+  <view class='play-success' wx:if='{{CompleteSuccess}}'>
+    <image class="result-image" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/pic_ok copy.png" background-size="cover"></image>
+    <text class='success-tips'>哇哦！
+ 你竟然!!!
+ 已经答完题了 !!!!!</text>
+    <navigator url="../index/index?snsId={{snsId}}&userId={{userId}}" class='ok'>确定 !</navigator>
+  </view>
+  <view class='play-success' wx:else>
+    <image class="result-image" src="http://photodebug.oss-cn-hongkong.aliyuncs.com/tbh/pic_error copy.png" background-size="cover"></image>
+    <text class='success-tips'>哇哦！
+ 网络 。。。
+ 好像出问题了 。。。</text>
+  <button class='ok' bindtap='bindRefresh'>刷新一下</button>
+  </view>
+</view>
